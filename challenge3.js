@@ -20,3 +20,26 @@ if (dolphinsAverageScore > koalasAverageScore && dolphinsAverageScore >= 100) {
 }else{
     console.log("No one wins the trophy 😥");
 }
+
+
+function calcAverage(score1, score2, score3) {
+    return (score1 + score2 + score3) / 3;
+    console.log(calcAverage);
+}
+
+console.log( calcAverage(dolphinsScore1, dolphinsScore2, dolphinsScore3));
+console.log( calcAverage(koalasScore1, koalasScore2, koalasScore3));
+
+let avgDolphins = calcAverage(dolphinsScore1, dolphinsScore2, dolphinsScore3);
+let avgKoalas = calcAverage(koalasScore1, koalasScore2, koalasScore3);
+
+function checkWinner(avgDolphins, avgKoalas) {
+    if(avgDolphins >= 2 * avgKoalas) {
+        console.log(`Dolphins win (${avgDolphins} vs. ${avgKoalas})`);
+    } else if (avgKoalas >= 2 * avgDolphins) {
+        console.log(`Koalas win (${avgKoalas} vs. ${avgDolphins})`);
+    } else {
+        console.log("No team wins...");
+    }
+}
+checkWinner(avgDolphins, avgKoalas);
